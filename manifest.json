@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "QRtube",
+  "description": "This extension generates QR codes based on content of the page",
+  "version": "1.0",
+
+  "permissions": [
+    "https://secure.flickr.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "qrtube.html"
+  }
+}
