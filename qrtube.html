@@ -23,12 +23,17 @@
       -
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
      -->
-    <script src="popup.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.min.js"></script>
+    <script type="text/javascript" src="qrtube.js"></script>
   </head>
   <body>
-    <p>Hello World</p>
-    <input type="text" name="url">
-    <input type="submit" value="Generate">
+    <p>Welcome to QRtube</p>
+    <input type="text" name="url" id="url-input-box" width="600px">
+    <input type="submit" id="generate-btn" value="Generate">
+    <div id="qrcode">
+
+    </div>
   </body>
 </html>
 
