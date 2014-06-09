@@ -6,13 +6,18 @@
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <style>
       body {
-        width: 160px;
         padding: 10px;
+        background-image: url("pw_pattern.png");
       }
 
       #wrapper {
-        width: 128px;
+        width: 410px;
+        height: 128px;
         margin: auto;
+      }
+
+      #logo {
+        height:28px;
       }
 
       #qrcode {
@@ -22,14 +27,34 @@
       }
 
       #content-input-box {
-        width: 128px;
-        height: 128px;
+        width: 250px;
+        height: 100px;
       }
 
       #generate-button {
         width: 128px;
         margin: 10px 0;
       }
+
+      #disclaimer {
+        text-align: right;
+        font-size: 9px;
+        clear: both;
+      }
+
+      .float-left {
+        position: relative;
+        float: left;
+      }
+
+      .left-half {
+        width: 275px;
+      }
+
+      .right-half {
+        width: 128px;
+      }
+
     </style>
 
     <!--
@@ -45,14 +70,21 @@
   </head>
   <body>
     <div id="wrapper">
-    <p>QRtube</p>
-    <div>
-    <textarea name="url" id="content-input-box"></textarea>
-    </div>
-    <!-- <button type="button" id="generate-button" class="btn btn-primary">GENERATE</button> -->
-    <div id="qrcode">
 
-    </div>
+      <div class="float-left left-half">
+        <div id="logo">QRtube</div>
+        <textarea name="url" id="content-input-box"></textarea>
+      </div>
+
+      <div class="float-left right-half">
+        <div id="qrcode"></div>
+      </div>
+
+<!--       <div id="disclaimer">
+        QRcode generated with qrcode.js<br>
+        Background image from http://subtlepatterns.com/about/
+      </div>
+-->
     </div>
   </body>
 </html>

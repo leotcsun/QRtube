@@ -8,7 +8,7 @@ function main() {
     function updateQRcode(content) {
         if (qrcode == null) {
             qrcode = new QRCode($("#qrcode")[0], {
-                text: "QRtube",
+                text: content,
                 width: 128,
                 height: 128
             });
@@ -21,6 +21,8 @@ function main() {
 
 
     document.addEventListener('DOMContentLoaded', function() {
+        updateQRcode("QRtube");
+
         chrome.tabs.getSelected(null,function(tab) {
             var tabUrl = tab.url;
             $(contentInputBox).val(tabUrl);
