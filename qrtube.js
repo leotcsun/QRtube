@@ -5,22 +5,37 @@ function main() {
     var contentInputBox = "#content-input-box";
     var generateButton = "#generate-button";
 
-    document.addEventListener('DOMContentLoaded', function() {
-        chrome.tabs.getSelected(null,function(tab) {
-            tabUrl = tab.url;
-            $(contentInputBox).val(tabUrl);
+    function updateQRcode(content) {
+        if (qrcode == null) {
             qrcode = new QRCode($("#qrcode")[0], {
-                text: tabUrl,
+                text: "QRtube",
                 width: 128,
                 height: 128
             });
-        });
 
-        $(generateButton)[0].addEventListener('click', function() {
-            var content = $(contentInputBox).val();
+        } else {
             qrcode.clear();
             qrcode.makeCode(content);
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        chrome.tabs.getSelected(null,function(tab) {
+            var tabUrl = tab.url;
+            $(contentInputBox).val(tabUrl);
+            updateQRcode(tabUrl);
         });
+
+        $(contentInputBox).keyup(function() {
+            updateQRcode($(this).val());
+        });
+
+        // $(generateButton)[0].addEventListener('click', function() {
+        //     var content = $(contentInputBox).val();
+        //     qrcode.clear();
+        //     qrcode.makeCode(content);
+        // });
 
         $(contentInputBox).on('mouseup', function() { $(this)[0].select(); });
     });

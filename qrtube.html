@@ -10,6 +10,11 @@
         padding: 10px;
       }
 
+      #wrapper {
+        width: 128px;
+        margin: auto;
+      }
+
       #qrcode {
         background-image: url("placeholder.png");
         width: 128px;
@@ -39,13 +44,15 @@
     <script type="text/javascript" src="qrtube.js"></script>
   </head>
   <body>
+    <div id="wrapper">
     <p>QRtube</p>
     <div>
     <textarea name="url" id="content-input-box"></textarea>
     </div>
-    <button type="button" id="generate-button" class="btn btn-primary">GENERATE</button>
+    <!-- <button type="button" id="generate-button" class="btn btn-primary">GENERATE</button> -->
     <div id="qrcode">
 
+    </div>
     </div>
   </body>
 </html>
