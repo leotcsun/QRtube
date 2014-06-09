@@ -2,11 +2,29 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <style>
       body {
-        width: 500px;
+        width: 160px;
+        padding: 10px;
       }
 
+      #qrcode {
+        background-image: url("placeholder.png");
+        width: 128px;
+        height: 128px;
+      }
+
+      #content-input-box {
+        width: 128px;
+        height: 128px;
+      }
+
+      #generate-button {
+        width: 128px;
+        margin: 10px 0;
+      }
     </style>
 
     <!--
@@ -16,13 +34,16 @@
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
      -->
     <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
     <script type="text/javascript" src="qrcode.min.js"></script>
     <script type="text/javascript" src="qrtube.js"></script>
   </head>
   <body>
-    <p>Welcome to QRtube</p>
-    <input type="text" name="url" id="url-input-box" width="600px">
-    <input type="submit" id="generate-btn" value="Generate">
+    <p>QRtube</p>
+    <div>
+    <textarea name="url" id="content-input-box"></textarea>
+    </div>
+    <button type="button" id="generate-button" class="btn btn-primary">GENERATE</button>
     <div id="qrcode">
 
     </div>
