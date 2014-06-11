@@ -24,9 +24,6 @@ function background() {
             /* Inject the code into the current tab */
             chrome.tabs.executeScript(tab.id, { code: 'QRcodeContent = "' + content + '";' });
             chrome.tabs.executeScript(tab.id, { file: "inject.js" });
-
-
-            // udpateQRcode(content);
         }
     });
 
