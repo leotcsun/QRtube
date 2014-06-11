@@ -6,14 +6,23 @@
   "version": "1.0",
 
   "permissions": [
-     "tabs"
+     "tabs",
+     "contextMenus",
+     "http://*/",
+     "https://*/"
   ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "qrtube.html"
   },
+
   "content_scripts": [ {
-    "js": [ "jquery.min.js", "qrcode.min.js", "qrtube.js" ],
+    "js": [ "jquery.min.js", "qrcode.min.js", "qrtube.js"],
     "matches": [ "http://*/*", "https://*/*"]
   }]
 }
