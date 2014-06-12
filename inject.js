@@ -7,8 +7,6 @@ function inject(){
         });
     };
 
-
-
     function removeFloatingQRcode() {
         var element = document.getElementById("float-qr-code");
         if (element) {
@@ -22,11 +20,12 @@ function inject(){
     div.setAttribute("style", "\
         background-color: white;\
         width: 128px;\
-        height: 128px;\
+        height: 128;\
         position: fixed;\
         top: 20px;\
         right: 20px;\
         z-index: 9999;\
+        text-align: right;\
         border: solid 10px white;\
         ");
     document.body.appendChild(div);

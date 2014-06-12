@@ -17,6 +17,15 @@ function main() {
             qrcode.clear();
             qrcode.makeCode(content);
         }
+
+        $("#qrcode img")[0].addEventListener("click", function() {
+            var date = Date().toString().replace(/:/g, "").split(" ");
+
+            chrome.downloads.download({
+              url: $("#qrcode img").attr("src"),
+              filename: "QRtube" + "-" + date[3] + "-" + date[1] + "-" + date[2] + "-" + date[4] + ".png"
+            });
+        });
     }
 
 
@@ -33,15 +42,8 @@ function main() {
             updateQRcode($(this).val());
         });
 
-        // $(generateButton)[0].addEventListener('click', function() {
-        //     var content = $(contentInputBox).val();
-        //     qrcode.clear();
-        //     qrcode.makeCode(content);
-        // });
-
         $(contentInputBox).on('mouseup', function() { $(this)[0].select(); });
     });
-
 
 };
 main();
