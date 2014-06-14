@@ -24,7 +24,7 @@ function inject(){
         position: fixed;\
         top: 20px;\
         right: 20px;\
-        z-index: 9999;\
+        z-index: 2999999999;\
         text-align: right;\
         border: solid 10px white;\
         ");
