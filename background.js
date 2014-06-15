@@ -16,7 +16,7 @@ function background() {
             } else if (info.selectionText) {
                 content = info.selectionText;
             } else if (info.mediaType === "image") {
-                content = tab.srcUrl;
+                content = info.srcUrl;
             } else {
                 content = tab.url;
             }
