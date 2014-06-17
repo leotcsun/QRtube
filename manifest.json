@@ -29,7 +29,7 @@
   },
 
   "content_scripts": [ {
-    "js": [ "jquery.min.js", "qrcode.min.js", "qrtube.js"],
+    "js": [ "jquery.min.js", "qrcode.min.js", "qrtube.js", "jquery.qrcode.min.js"],
     "matches": [ "http://*/*", "https://*/*"]
   }]
 }

@@ -6,23 +6,15 @@ function main() {
     var generateButton = "#generate-button";
 
     function updateQRcode(content) {
-        if (qrcode == null) {
-            qrcode = new QRCode($("#qrcode")[0], {
-                text: content,
-                width: 128,
-                height: 128
-            });
+        $("#qrcode canvas").remove();
+        $("#qrcode").qrcode({ width: 128, height: 128, text: content });
+        $("#qrcode canvas").attr("title", content).attr("src", $("#qrcode canvas")[0].toDataURL());
 
-        } else {
-            qrcode.clear();
-            qrcode.makeCode(content);
-        }
-
-        $("#qrcode img")[0].addEventListener("click", function() {
+        $("#qrcode canvas")[0].addEventListener("click", function() {
             var date = Date().toString().replace(/:/g, "").split(" ");
 
             chrome.downloads.download({
-              url: $("#qrcode img").attr("src"),
+              url: $("#qrcode canvas").attr("src"),
               filename: "QRtube" + "-" + date[3] + "-" + date[1] + "-" + date[2] + "-" + date[4] + ".png"
             });
         });
@@ -30,8 +22,6 @@ function main() {
 
 
     document.addEventListener('DOMContentLoaded', function() {
-        updateQRcode("QRtube");
-
         chrome.tabs.getSelected(null,function(tab) {
             var tabUrl = tab.url;
             $(contentInputBox).val(tabUrl);
