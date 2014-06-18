@@ -1,4 +1,4 @@
-function inject(){
+(function(){
     function updateFloatingQRcode(content) {
         $("#float-qr-code canvas").remove();
         $("#float-qr-code").qrcode({ width: 128, height: 128, text: content });
@@ -30,7 +30,5 @@ function inject(){
     updateFloatingQRcode(QRcodeContent);
 
     $("#float-qr-code").click(removeFloatingQRcode);
-};
-
-inject();
+})();
 

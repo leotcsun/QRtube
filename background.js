@@ -1,4 +1,4 @@
-function background() {
+(function() {
     var qrcode;
 
     chrome.contextMenus.create({
@@ -40,6 +40,4 @@ function background() {
             qrcode.makeCode(content);
         }
     };
-};
-
-background();
+})();

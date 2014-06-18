@@ -1,5 +1,4 @@
-
-function main() {
+(function() {
     var tabUrl;
     var qrcode;
     var contentInputBox = "#content-input-box";
@@ -35,5 +34,4 @@ function main() {
         $(contentInputBox).on('mouseup', function() { $(this)[0].select(); });
     });
 
-};
-main();
+})();
