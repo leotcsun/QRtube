@@ -22,7 +22,7 @@
             }
 
             /* Inject the code into the current tab */
-            chrome.tabs.executeScript(tab.id, { code: 'QRcodeContent = "' + content + '";' });
+            chrome.tabs.executeScript(tab.id, { code: 'QRtubeContent = "' + content + '";' });
             chrome.tabs.executeScript(tab.id, { file: "inject.js" });
         }
     });

@@ -27,7 +27,7 @@
         border: solid 10px white;\
         ");
     document.body.appendChild(div);
-    updateFloatingQRcode(QRcodeContent);
+    updateFloatingQRcode(QRtubeContent);
 
     $("#float-qr-code").click(removeFloatingQRcode);
 })();
