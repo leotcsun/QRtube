@@ -28,6 +28,8 @@
     });
 
     function updateQRcode(content) {
+        content = unescape(encodeURIComponent(content));
+
         if (qrcode == null) {
             qrcode = new QRCode($("#floater")[0], {
                 text: content,

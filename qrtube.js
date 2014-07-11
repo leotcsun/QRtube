@@ -5,6 +5,10 @@
     var generateButton = "#generate-button";
 
     function updateQRcode(content) {
+
+        // utf-8
+        content = unescape(encodeURIComponent(content));
+
         $("#qrcode canvas").remove();
         $("#qrcode").qrcode({ width: 128, height: 128, text: content });
         $("#qrcode canvas").attr("title", content).attr("src", $("#qrcode canvas")[0].toDataURL());

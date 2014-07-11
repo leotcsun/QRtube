@@ -1,5 +1,7 @@
 (function(){
     function updateFloatingQRcode(content) {
+        content = unescape(encodeURIComponent(content));
+
         $("#float-qr-code canvas").remove();
         $("#float-qr-code").qrcode({ width: 128, height: 128, text: content });
         $("#float-qr-code").attr("title", content).attr("src", $("#float-qr-code canvas")[0].toDataURL());
