@@ -31,7 +31,7 @@
             updateQRcode(tabUrl);
         });
 
-        $(contentInputBox).keyup(function() {
+        $(contentInputBox).on("keyup", function() {
             updateQRcode($(this).val());
         });
 
